@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAUTAM JHA - Telegram Channel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056d6;
+            --primary-gradient: linear-gradient(90deg, #1a6dff, #0052cc);
+            --bg-color: #f4f7fb;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --success-bg: #e6f4ea;
+            --success-text: #137333;
+            --warning-bg: #fff3e0;
+            --warning-text: #e65100;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #f8faff;
+            min-height: 100vh;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .online-badge {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #34a853;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(52, 168, 83, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0); }
+        }
+
+        .profile-wrapper {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .profile-img{
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid var(--card-bg);
+            object-fit: cover;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            /* border-radius: 100%; */
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .rating-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .review-text {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .cta-btn {
+            width: 100%;
+            background: var(--primary-gradient);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            box-shadow: 0 8px 20px rgba(0, 86, 214, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 24px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 86, 214, 0.35);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 16px 8px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .stat-value {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .headline-main {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .headline-main span {
+            color: var(--primary);
+        }
+
+        .headline-sub {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .alert-banner {
+            background-color: var(--warning-bg);
+            color: var(--warning-text);
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .features-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+            line-height: 1.5;
+            margin-top: 8px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            width: 100%;
+        }
+
+        .disclaimer span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="online-badge">
+            <div class="online-dot"></div>
+            5,947 Traders Online Now
+        </div>
+
+        <div class="profile-wrapper">
+            <img src="/image.jpg" alt="Profile" class="profile-img">
+        </div>
+
+        <h1>GAUTAM JHA</h1>
+        
+        <div class="subtitle">
+            🏆 India's No.1 Stock Market Channel
+        </div>
+
+        <div class="rating-wrapper">
+            <div class="stars">★★★★★</div>
+            <div class="review-text">4.9/5 (2340 Reviews)</div>
+        </div>
+        <a href="https://t.me/+rHq5hIjwskM1ZGU9" class="cta-btn">
+            Join Free Telegram Channel &rarr;
+        </a>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">50K+</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">5+</div>
+                <div class="stat-label">Years</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">95%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+        <h2 class="headline-main">
+            Get <span>FREE</span> Daily Calls<br>
+            for NIFTY, BANKNIFTY & SENSEX
+        </h2>
+        <p class="headline-sub">
+            Join thousands of traders getting daily market analysis
+        </p>
+
+        <div class="alert-banner">
+            🔥 Limited FREE Access Available
+        </div>
+
+        <div class="features-list">
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                Daily Nifty & BankNifty Levels
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎓</span>
+                Educational Market Analysis
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">👥</span>
+                50,000+ Subscribers Community
+            </div>
+        </div>
+
+        <a href="https://t.me/+rHq5hIjwskM1ZGU9" class="cta-btn">
+            Join Free Telegram Channel &rarr;
+        </a>
+
+        <div class="disclaimer">
+            <span>Disclaimer:</span>
+            This channel is for educational purposes only. Trading involves market risk. Please consult your financial advisor before making investment decisions.
+        </div>
+
+    </div>
+
+</body>
+</html>
